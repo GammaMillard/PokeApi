@@ -9,15 +9,8 @@ const PokeList = ({ dataList, dataNext, dataPrevious }) => {
     const [list, setList] = useState(dataList)
     const [next, setNext] = useState(dataNext)
     const [previous, setPrevious] = useState(dataPrevious)
-    console.log(list,next,previous);
-    const handleClick = async (behaviour) => {
-        
-        const res = await fetchData(behaviour === 'next' ? next : previous)
-
-    }
-    
+ 
     const setStates = (res) => {
-        
         setList(res.results)
         setNext(res.next)
         setPrevious(res.previous)
