@@ -9,7 +9,7 @@ const PokeList = ({ dataList, dataNext, dataPrevious }) => {
     const [list, setList] = useState(dataList)
     const [next, setNext] = useState(dataNext)
     const [previous, setPrevious] = useState(dataPrevious)
- 
+
     const setStates = (res) => {
         setList(res.results)
         setNext(res.next)
@@ -17,12 +17,12 @@ const PokeList = ({ dataList, dataNext, dataPrevious }) => {
     }
 
     return (
-        <> 
-            <button onClick={async() => {
+        <>
+            <button onClick={async () => {
                 const res = await fetchData(previous)
                 setStates(res)
-            }} className={`rounded-md p-2 hover:bg-pink-500 ${!previous ? 'hidden' : '' }`}>Anterior</button>
-            <button onClick={async() => {
+            }} className={`rounded-md p-2 hover:bg-pink-500 ${!previous ? 'hidden' : ''}`}>Anterior</button>
+            <button onClick={async () => {
                 const res = await fetchData(next)
                 setStates(res)
             }} className="rounded-md p-2 hover:bg-pink-800 hover:text-white">Siguiente</button>
